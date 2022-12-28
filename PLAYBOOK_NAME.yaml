@@ -1,0 +1,20 @@
+---
+- name: PLAYBOOK_NAME
+  hosts: all
+  # environment:
+  #   DEBIAN_FRONTEND: noninteractive
+  roles:
+    # Installing docker from this role
+    # requires a hack to make it think
+    # it's a debian system:
+    - role: TODO
+      become: yes
+    - role: TODO
+
+  tasks:
+    # - name: TODO
+    #   become: yes
+    #   ansible.builtin.apt:
+    #     name: "{{ install_packages }}"
+    #     state: present
+    #     update_cache: yes
