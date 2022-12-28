@@ -1,0 +1,17 @@
+---
+- name: PLAYBOOK_NAME
+  hosts: all
+  # environment:
+  #   DEBIAN_FRONTEND: noninteractive
+  roles:
+    - name: cowdogmoo.firefox
+      become: true
+    # - role: TODO
+
+  # tasks:
+  # - name: TODO
+  #   become: true
+  #   ansible.builtin.apt:
+  #     name: "{{ install_packages }}"
+  #     state: present
+  #     update_cache: yes
