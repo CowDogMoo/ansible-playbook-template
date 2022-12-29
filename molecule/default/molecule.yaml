@@ -1,15 +1,14 @@
 ---
-driver:
-  name: docker
-
 # Use Ansible Galaxy to install dependencies
 dependency:
   name: galaxy
   options:
-    # Install required galaxy roles
-    role-file: ../../requirements.yml
     # Install required collections
     requirements-file: ../../requirements.yml
+
+# Run molecule inside of a docker container
+driver:
+  name: docker
 
 platforms:
   - name: centos-PLAYBOOK_NAME
@@ -32,6 +31,10 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
+
+  - name: kali-attack-box
+    image: cisagov/docker-kali-ansible:latest
+    pre_build_image: true
 
 provisioner:
   name: ansible
